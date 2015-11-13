@@ -15,7 +15,9 @@ Install mongodb, e.g. via homebrew (https://docs.mongodb.org/manual/tutorial/ins
 
 ```bash
 brew install mongodb
-mkdir -p /data/db
+sudo mkdir -p /data/db
+sudo chown -R `whoami` /data/db
+sudo chmod -R 755 /data/db
 ```
 
 
