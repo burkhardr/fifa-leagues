@@ -21,6 +21,7 @@
     "babel-relay-plugin": "0.3.0",
     "classnames": "2.2.0",
     "graphql": "0.4.12",
+    "history": "^1.13.0",
     "koa": "^1.1.2",
     "koa-static": "^1.5.2",
     "mongoose": "4.2.3",
