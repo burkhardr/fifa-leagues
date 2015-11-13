@@ -15,7 +15,7 @@ Install mongodb, e.g. via homebrew (https://docs.mongodb.org/manual/tutorial/ins
 
 ```bash
 brew install mongodb
-mkdir -p /data/db
+mkdir -p data/db
 ```
 
 
