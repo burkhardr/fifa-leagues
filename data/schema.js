@@ -1,15 +1,19 @@
-import mongoose from 'mongoose';
 import {getSchema} from '@risingstack/graffiti-mongoose';
 
-const TodoSchema = new mongoose.Schema({
-  text: {
-    type: String
-  },
-  complete: {
-    type: Boolean
-  }
-});
+import User from './models/User';
+import Season from './models/Season';
+import Division from './models/Division';
+import Team from './models/Team';
+import Match from './models/Match';
 
-const Todo = mongoose.model('Todo', TodoSchema);
+// TODO: remove
+import Todo from './models/Todo';
 
-export default getSchema([Todo]);
+export default getSchema([
+  Todo,
+  User,
+  Season,
+  Division,
+  Team,
+  Match,
+]);
