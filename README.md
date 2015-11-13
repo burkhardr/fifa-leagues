@@ -11,10 +11,18 @@ A project demonstrating the use of GraphQL and Relay (via Graffiti).
 npm install
 ```
 
+Install mongodb, e.g. via homebrew (https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/):
+
+```bash
+brew install mongodb
+mkdir -p /data/db
+```
+
 
 ## Run
 
 ```bash
+mongod
 npm start
 ```
 
