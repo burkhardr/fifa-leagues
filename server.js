@@ -15,7 +15,7 @@ const app = koa();
 app.use(serve(path.resolve(__dirname, 'public')));
 
 // register graphQL schema
-app.use(graffiti.koa({schema}));
+app.use(graffiti.koa({schema, graphiql: true}));
 
 app.listen(port);
 console.log('listening on port ' + port);

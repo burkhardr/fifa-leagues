@@ -1,4 +1,4 @@
-import Relay from 'relay';
+import Relay from 'react-relay';
 
 const ViewerQueries = {
   viewer: () => Relay.QL`query { viewer }`,

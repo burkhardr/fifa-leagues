@@ -1,16 +1,15 @@
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {RelayRouter} from 'react-router-relay';
+import createHashHistory from 'history/lib/createHashHistory';
 // TODO: import createBrowserHistory from 'history/lib/createBrowserHistory'
 
-import ViewerQueries from './queries/ViewerQueries';
-import App from './App';
+import routes from './routes';
+
 
 ReactDOM.render((
-  <RelayRouter>
-    <Route
-      path="/"
-      component={App}
-      queries={ViewerQueries}
-      />
-  </RelayRouter>
+  <RelayRouter
+    history={createHashHistory()}
+    routes={routes}
+    />
 ), document.getElementById('root'));
