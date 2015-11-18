@@ -13,12 +13,6 @@ class App extends React.Component {
 }
 
 export default Relay.createContainer(App, {
-  prepareVariables() {
-    return {
-      limit: Number.MAX_SAFE_INTEGER,
-    };
-  },
-
   fragments: {
     viewer: () => Relay.QL`
       fragment on Viewer {

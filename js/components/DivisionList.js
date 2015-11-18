@@ -1,15 +1,16 @@
 import React from 'react';
 import Relay from 'react-relay';
 
+import Division from './Division';
+
 class DivisionList extends React.Component {
   makeDivision = (edge) => {
     const division = edge.node;
 
-    return (
-      <li key={division.id}>
-        {division.rank} - {division.name}
-      </li>
-    );
+    return <Division
+      key={division.id}
+      division={division}
+    />
   }
 
   render() {
@@ -35,9 +36,8 @@ export default Relay.createContainer(DivisionList, {
           count,
           edges {
             node {
-              id,
-              name,
-              rank
+              id
+              ${Division.getFragment('division')}
             }
           }
         }

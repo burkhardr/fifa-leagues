@@ -21,7 +21,6 @@ export default Relay.createContainer(Home, {
   fragments: {
     viewer: () => Relay.QL`
       fragment on Viewer {
-        __typename,
         ${DivisionList.getFragment('viewer')}
       }
     `,
