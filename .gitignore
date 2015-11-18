@@ -2,3 +2,5 @@
 node_modules
 npm-debug.log
 data/schema.graphql
+data/schema.json
+public/app.js
