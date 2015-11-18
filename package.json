@@ -10,7 +10,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node .",
-    "build": "webpack && npm run update-schema",
+    "build": "npm run update-schema && webpack",
     "update-schema": "babel-node ./scripts/updateSchema.js"
   },
   "dependencies": {
