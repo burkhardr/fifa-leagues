@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 import schema from './data/schema';
 
 const port = process.env.PORT || 3000;
-const mongoUri = process.env.MONGO_URI || process.env.MONGOLAB_URI || 'mongodb://localhost/graphql';
+const mongoUri = process.env.MONGO_URI || process.env.MONGOLAB_URI || 'mongodb://localhost/fifa-leagues';
 
 mongoose.connect(mongoUri);
 

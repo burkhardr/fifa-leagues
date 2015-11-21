@@ -14,7 +14,8 @@ class DivisionList extends React.Component {
   }
 
   render() {
-    const {viewer: {divisions: {count, edges}}} = this.props;
+    const {viewer} = this.props;
+    const {divisions: {count, edges}} = viewer;
     const divisionList = edges.map(this.makeDivision);
 
     return (

@@ -22,5 +22,6 @@ module.exports = {
         loader: 'style!css'
       }
     ]
-  }
+  },
+  devtool: 'source-map'
 };
