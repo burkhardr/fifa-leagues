@@ -1,8 +1,8 @@
 import React from 'react';
 import Relay from 'react-relay';
 
-import DivisionList from './DivisionList';
-import DivisionForm from './DivisionForm';
+import DivisionList from './division/DivisionList';
+import DivisionForm from './division/DivisionForm';
 
 class Home extends React.Component {
   render() {

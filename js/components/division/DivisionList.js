@@ -6,11 +6,13 @@ import Division from './Division';
 class DivisionList extends React.Component {
   makeDivision = (edge) => {
     const division = edge.node;
+    const {viewer} = this.props;
 
     return <Division
       key={division.id}
       division={division}
-    />
+      viewer={viewer}
+    />;
   }
 
   render() {
@@ -21,19 +23,33 @@ class DivisionList extends React.Component {
     return (
       <div>
         <h2>{count} Divisions</h2>
-        <ul>
-          {divisionList}
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            {divisionList}
+          </tbody>
+        </table>
       </div>
     );
   }
 }
 
 export default Relay.createContainer(DivisionList, {
+  prepareVariables() {
+    return {
+      limit: Number.MAX_SAFE_INTEGER,
+    };
+  },
+
   fragments: {
     viewer: () => Relay.QL`
       fragment on Viewer {
-        divisions(first: 10) {
+        divisions(first: $limit) {
           count,
           edges {
             node {
@@ -42,6 +58,7 @@ export default Relay.createContainer(DivisionList, {
             }
           }
         }
+        ${Division.getFragment('viewer')}
       }
     `,
   },

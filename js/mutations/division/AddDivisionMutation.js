@@ -27,10 +27,11 @@ export default class AddDivisionMutation extends Relay.Mutation {
     };
   }
 
+  // TODO: viewer doesn't get returned from graphql => count won't update
   getFatQuery() {
     return Relay.QL`
       fragment on addDivisionPayload {
-        changedDivisionEdge
+        changedDivisionEdge,
         viewer {
           divisions {
             count

@@ -1,7 +1,7 @@
 import React from 'react';
 import Relay from 'react-relay';
 
-import AddDivisionMutation from '../mutations/AddDivisionMutation';
+import AddDivisionMutation from '../../mutations/division/AddDivisionMutation';
 
 class DivisionForm extends React.Component {
   constructor(...props) {
