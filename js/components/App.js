@@ -11,6 +11,7 @@ class App extends React.Component {
       <div>
         <ul className="menu">
           <li><Link to="/" activeStyle={ACTIVE}>Home</Link></li>
+          <li><Link to="/users" activeStyle={ACTIVE}>Users</Link></li>
           <li><Link to="/divisions" activeStyle={ACTIVE}>Divisions</Link></li>
         </ul>
         {this.props.children}

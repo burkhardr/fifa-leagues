@@ -12,7 +12,7 @@ class Division extends React.Component {
     const {viewer, division: {id}} = this.props;
 
     Relay.Store.update(
-      new DeleteDivisionMutation({viewer, id: id})
+      new DeleteDivisionMutation({viewer, id})
     );
   }
 
