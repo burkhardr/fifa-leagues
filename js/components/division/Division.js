@@ -4,6 +4,10 @@ import Relay from 'react-relay';
 import DeleteDivisionMutation from '../../mutations/division/DeleteDivisionMutation';
 
 class Division extends React.Component {
+  static propTypes = {
+    edit: React.PropTypes.bool,
+  }
+
   handleDelete() {
     const {viewer, division: {id}} = this.props;
 
@@ -13,13 +17,15 @@ class Division extends React.Component {
   }
 
   render() {
-    const {division} = this.props;
+    const {division, edit} = this.props;
 
     return (
       <tr>
         <td>{division.rank}</td>
         <td>{division.name}</td>
-        <td><button onClick={this.handleDelete.bind(this)}>x</button></td>
+        {edit &&
+          <td><button onClick={() => this.handleDelete()}>x</button></td>
+        }
       </tr>
     );
   }

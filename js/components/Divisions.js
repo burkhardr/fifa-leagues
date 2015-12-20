@@ -3,21 +3,21 @@ import Relay from 'react-relay';
 
 import DivisionList from './division/DivisionList';
 
-class Home extends React.Component {
+class Divisions extends React.Component {
   render() {
     const {viewer} = this.props;
 
     return (
       <div>
-        <h1>Home</h1>
+        <h1>Divisions</h1>
 
-        <DivisionList viewer={viewer} />
+        <DivisionList viewer={viewer} edit={true} />
       </div>
     );
   }
 }
 
-export default Relay.createContainer(Home, {
+export default Relay.createContainer(Divisions, {
   fragments: {
     viewer: () => Relay.QL`
       fragment on Viewer {

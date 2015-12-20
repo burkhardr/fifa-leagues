@@ -2,21 +2,27 @@ import React from 'react';
 import Relay from 'react-relay';
 
 import Division from './Division';
+import DivisionForm from './DivisionForm';
 
 class DivisionList extends React.Component {
+  static propTypes = {
+    edit: React.PropTypes.bool,
+  }
+
   makeDivision = (edge) => {
     const division = edge.node;
-    const {viewer} = this.props;
+    const {viewer, edit} = this.props;
 
     return <Division
       key={division.id}
       division={division}
       viewer={viewer}
+      edit={edit}
     />;
   }
 
   render() {
-    const {viewer} = this.props;
+    const {viewer, edit} = this.props;
     const {divisions: {count, edges}} = viewer;
     const divisionList = edges.map(this.makeDivision);
 
@@ -34,6 +40,9 @@ class DivisionList extends React.Component {
             {divisionList}
           </tbody>
         </table>
+        {edit &&
+          <DivisionForm viewer={viewer} />
+        }
       </div>
     );
   }
@@ -59,6 +68,7 @@ export default Relay.createContainer(DivisionList, {
           }
         }
         ${Division.getFragment('viewer')}
+        ${DivisionForm.getFragment('viewer')}
       }
     `,
   },
