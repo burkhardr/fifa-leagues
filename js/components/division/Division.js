@@ -1,20 +1,12 @@
 import React from 'react';
 import Relay from 'react-relay';
 
+import Row from '../base/Row';
 import DeleteDivisionMutation from '../../mutations/division/DeleteDivisionMutation';
 
-class Division extends React.Component {
-  static propTypes = {
-    edit: React.PropTypes.bool,
-  }
-
-  handleDelete() {
-    const {viewer, division: {id}} = this.props;
-
-    Relay.Store.update(
-      new DeleteDivisionMutation({viewer, id})
-    );
-  }
+class Division extends Row {
+  static modelName = 'division';
+  static DeleteMutation = DeleteDivisionMutation;
 
   render() {
     const {division, edit} = this.props;

@@ -1,29 +1,19 @@
 import React from 'react';
 import Relay from 'react-relay';
 
+import Form from '../base/Form';
 import AddDivisionMutation from '../../mutations/division/AddDivisionMutation';
 
-class DivisionForm extends React.Component {
-  constructor(...props) {
-    super(...props);
+class DivisionForm extends Form {
+  static AddMutation = AddDivisionMutation;
+
+  constructor(...args) {
+    super(...args);
 
     this.state = {
       name: '',
       rank: 1,
     };
-  }
-
-  handleChange = (field, event) => {
-    const nextState = {};
-    nextState[field] = event.target.value;
-
-    this.setState(nextState);
-  }
-
-  handleSubmit = () => {
-    Relay.Store.update(
-      new AddDivisionMutation({...this.state, viewer: this.props.viewer})
-    );
   }
 
   render() {

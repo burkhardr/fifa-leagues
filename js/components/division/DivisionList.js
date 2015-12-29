@@ -1,13 +1,12 @@
 import React from 'react';
 import Relay from 'react-relay';
 
+import List from '../base/List';
 import Division from './Division';
 import DivisionForm from './DivisionForm';
 
-class DivisionList extends React.Component {
-  static propTypes = {
-    edit: React.PropTypes.bool,
-  }
+class DivisionList extends List {
+  static Row = Division;
 
   makeDivision = (edge) => {
     const division = edge.node;

@@ -1,20 +1,12 @@
 import React from 'react';
 import Relay from 'react-relay';
 
+import Row from '../base/Row';
 import DeleteUserMutation from '../../mutations/user/DeleteUserMutation';
 
-class User extends React.Component {
-  static propTypes = {
-    edit: React.PropTypes.bool,
-  }
-
-  handleDelete() {
-    const {viewer, user: {id}} = this.props;
-
-    Relay.Store.update(
-      new DeleteUserMutation({viewer, id})
-    );
-  }
+class User extends Row {
+  static modelName = 'user';
+  static DeleteMutation = DeleteUserMutation;
 
   render() {
     const {user, edit} = this.props;

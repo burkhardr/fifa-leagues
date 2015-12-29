@@ -1,9 +1,12 @@
 import React from 'react';
 import Relay from 'react-relay';
 
+import Form from '../base/Form';
 import AddUserMutation from '../../mutations/user/AddUserMutation';
 
-class UserForm extends React.Component {
+class UserForm extends Form {
+  static AddMutation = AddUserMutation;
+
   constructor(...props) {
     super(...props);
 
@@ -12,19 +15,6 @@ class UserForm extends React.Component {
       team_name: '',
       is_active: true,
     };
-  }
-
-  handleChange = (field, event) => {
-    const nextState = {};
-    nextState[field] = event.target.value;
-
-    this.setState(nextState);
-  }
-
-  handleSubmit = () => {
-    Relay.Store.update(
-      new AddUserMutation({...this.state, viewer: this.props.viewer})
-    );
   }
 
   render() {

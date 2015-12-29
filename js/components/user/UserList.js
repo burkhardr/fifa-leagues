@@ -1,13 +1,12 @@
 import React from 'react';
 import Relay from 'react-relay';
 
+import List from '../base/List';
 import User from './User';
 import UserForm from './UserForm';
 
-class UserList extends React.Component {
-  static propTypes = {
-    edit: React.PropTypes.bool,
-  }
+class UserList extends List {
+  static Row = User;
 
   makeUser = (edge) => {
     const user = edge.node;
