@@ -13,6 +13,7 @@ class App extends React.Component {
           <li><Link to="/" activeStyle={ACTIVE}>Home</Link></li>
           <li><Link to="/users" activeStyle={ACTIVE}>Users</Link></li>
           <li><Link to="/divisions" activeStyle={ACTIVE}>Divisions</Link></li>
+          <li><Link to="/teams" activeStyle={ACTIVE}>Teams</Link></li>
         </ul>
         {this.props.children}
       </div>

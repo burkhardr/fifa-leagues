@@ -1,8 +1,9 @@
 import React from 'react';
 import Relay from 'react-relay';
 
-import DivisionList from './division/DivisionList';
 import UserList from './user/UserList';
+import DivisionList from './division/DivisionList';
+import TeamList from './team/TeamList';
 
 class Home extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class Home extends React.Component {
 
         <UserList viewer={viewer} />
         <DivisionList viewer={viewer} />
+        <TeamList viewer={viewer} />
       </div>
     );
   }
@@ -25,6 +27,7 @@ export default Relay.createContainer(Home, {
       fragment on Viewer {
         ${UserList.getFragment('viewer')}
         ${DivisionList.getFragment('viewer')}
+        ${TeamList.getFragment('viewer')}
       }
     `,
   },
