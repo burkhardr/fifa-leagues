@@ -13,15 +13,16 @@ async () => {
       JSON.stringify(result.errors, null, 2)
     );
   } else {
+    console.log('Writing schema');
     fs.writeFileSync(
       path.join(__dirname, '../data/schema.json'),
       JSON.stringify(result, null, 2)
     );
+
+    // Save user readable type system shorthand of schema
+    fs.writeFileSync(
+      path.join(__dirname, '../data/schema.graphql'),
+      printSchema(schema)
+    );
   }
 }();
-
-// Save user readable type system shorthand of schema
-fs.writeFileSync(
-  path.join(__dirname, '../data/schema.graphql'),
-  printSchema(schema)
-);

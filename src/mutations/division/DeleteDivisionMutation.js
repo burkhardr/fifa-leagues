@@ -4,7 +4,7 @@ export default class DeleteDivisionMutation extends Relay.Mutation {
   static fragments = {
     viewer: () => Relay.QL`
       fragment on Viewer {
-        id
+        id,
         divisions {
           count
         }
